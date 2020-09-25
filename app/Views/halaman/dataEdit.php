@@ -37,6 +37,10 @@ $this->section('body'); ?>
                         <label for="alamat">alamat</label>
                         <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $siswa['alamat']; ?>">
                     </div>
+                    <div class="form-group">
+                        <label for="lulus">lulus</label>
+                        <input type="text" name="lulus" class="form-control" id="lulus" value="<?= $siswa['lulus']; ?>">
+                    </div>
 
                     <button type="submit" name="edit" class="btn btn-primary float-right">Ubah Data</button>
                 </form>

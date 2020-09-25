@@ -44,11 +44,17 @@ class Data extends BaseController
             'nama' => $this->request->getPost('nama'),
             'nisn' => $this->request->getPost('nisn'),
             'nik' => $this->request->getPost('nik'),
+            'alamat' => $this->request->getPost('alamat'),
             'tgl_lahir' => $this->request->getPost('tgl_lahir'),
             'lulus' => $this->request->getPost('lulus'),
         ];
+        $data2 = [
+            'siswa' => $this->dataModel->getAllData(),
+        ];
         $this->dataModel->dataEdit($data);
-        return view('/');
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
+
+        return redirect()->to('/Data');
     }
     //--------------------------------------------------------------------
 
