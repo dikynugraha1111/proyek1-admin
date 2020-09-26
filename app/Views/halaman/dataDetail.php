@@ -2,7 +2,6 @@
 
 <?php $this->section('body'); ?>
 
-
 <div class="row">
     <div class="col">
         <div class="card" style="width: 18rem;">

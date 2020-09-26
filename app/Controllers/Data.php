@@ -48,12 +48,31 @@ class Data extends BaseController
             'tgl_lahir' => $this->request->getPost('tgl_lahir'),
             'lulus' => $this->request->getPost('lulus'),
         ];
-        $data2 = [
-            'siswa' => $this->dataModel->getAllData(),
-        ];
         $this->dataModel->dataEdit($data);
         session()->setFlashdata('pesan', 'Data berhasil diubah');
 
+        return redirect()->to('/Data');
+    }
+
+    public function delete($id)
+    {
+        $this->dataModel->deleteData($id);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+        return redirect()->to('/Data');
+    }
+
+    public function create()
+    {
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'nisn' => $this->request->getPost('nisn'),
+            'nik' => $this->request->getPost('nik'),
+            'alamat' => $this->request->getPost('alamat'),
+            'tgl_lahir' => $this->request->getPost('tgl_lahir'),
+            'lulus' => $this->request->getPost('lulus'),
+        ];
+        $this->dataModel->createData($data);
+        session()->setFlashdata('pesan', 'Data berhasil ditambah');
         return redirect()->to('/Data');
     }
     //--------------------------------------------------------------------
